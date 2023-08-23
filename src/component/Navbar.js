@@ -1,6 +1,7 @@
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import GoogleSignin from '../assets/image/btn_google_signin_dark_pressed_web.png'
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -15,28 +16,30 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed bg-[#0a192f] flex justify-between items-center w-screen px-10 py-2 h-14 text-white z-10">
-      {/* logo */}
-      <div className="text-xl">
+    <nav className="flex items-center justify-between bg-[#0a192f] text-gray-400 h-[60px] fixed w-full z-[1] px-[30px] py-2.5 left-0 top-0">
+      <h1 className="text-xl">
         Real <span className="font-bold text-blue-700 font-2xl">Chat</span>
-      </div>
-
+      </h1>
       {user ? (
-        <div
-          className="text-xl cursor-pointer hover:text-red-700"
+        <button
           onClick={handleSignOut}
+          className="text-[#88dded] border bg-[#1c2c4c] font-semibold px-2.5 py-[5px] rounded-[5px] border-solid border-[#1c2c4c]"
+          type="button"
         >
-          LogOut
-        </div>
+          Sign Out
+        </button>
       ) : (
-        <div
-          className="text-xl cursor-pointer hover:text-blue-700"
-          onClick={handleSignIn}
-        >
-          Login
-        </div>
+        <button className="bg-transparent border-[none]">
+          <img
+            className="h-[30px] w-auto"
+            onClick={handleSignIn}
+            src={GoogleSignin}
+            alt="sign in with google"
+            type="button"
+          />
+        </button>
       )}
-    </div>
+    </nav>
   );
 };
 
