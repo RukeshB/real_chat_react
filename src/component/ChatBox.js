@@ -1,9 +1,15 @@
+import Message from "./Message";
+import SendMessage from "./SendMessage";
+
 const ChatBox = () => {
-    return (
-        <div className="">
-            <div className="text-black pt-[100px]">ChatRoom</div>
-        </div>
-    )
-}
+  return (
+    <main className="chat-box">
+      <div className="mb-[60px] p-[30px]">
+        <Message />
+      </div>
+      <SendMessage />
+    </main>
+  );
+};
 
 export default ChatBox;
