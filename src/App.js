@@ -8,7 +8,7 @@ function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div>
+    <div className="w-full min-h-screen bg-[#1c2c4c] text-[#4c768d] pt-[60px]">
       <Navbar/>
       {user ? <ChatBox/> : <Welcome/>}
     </div>
