@@ -8,6 +8,11 @@ const SendMessage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (message.trim() === "") {
+      alert("Enter valid message");
+      return;
+    }
+
     const { uid, displayName, photoURL } = auth.currentUser;
 
     await addDoc(collection(db, "messages"), {
@@ -37,7 +42,7 @@ const SendMessage = () => {
           onChange={(e) => setMessage(e.target.value)}
         />
         <Button
-            type="submit"
+          type="submit"
           size="sm"
           color="blue"
           className="!absolute right-1 top-1 rounded"
