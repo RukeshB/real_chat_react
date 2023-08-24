@@ -4,10 +4,10 @@
 
 /* Message */
 .chat-bubble {
-  @apply bg-[#0a192f] text-[#1c2c4c] w-max max-w-[calc(100%_-_50px)] shadow-md flex items-start mb-5 p-[15px] rounded-[20px_20px_20px_0] text-gray-400;
+  @apply bg-[#0a192f] w-max max-w-[calc(100%_-_50px)] shadow-md flex items-start mb-5 p-[15px] rounded-[20px_20px_20px_0] text-gray-400;
 }
 .chat-bubble.right {
-  @apply bg-white shadow-[-2px_2px_1px_1px_#88dded] ml-auto rounded-[20px_20px_0_20px];
+  @apply bg-gray-400 text-[#0a192f] ml-auto rounded-[20px_20px_0_20px];
 }
 .chat-bubble__left {
   @apply w-[35px] h-[35px] mr-2.5 rounded-[50%];
